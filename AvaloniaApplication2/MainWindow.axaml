@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:av="clr-namespace:AvaloniaApplication2"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication2.MainWindow"
+        Title="AvaloniaApplication2"
+    x:DataType="av:MainViewModel">
+    
+	<Window.DataContext>
+		<av:MainViewModel />
+    </Window.DataContext>
+
+    <StackPanel>
+		<TextBox></TextBox>
+		<Button>
+			<Button.Flyout>
+				<av:AutoHideFlyout>
+					<StackPanel>
+						<Button ClickMode="Press" Command="{Binding MyCommand}" Content="Clickme" />
+                        <Button ClickMode="Press" Command="{Binding MyCommand}" Content="Clickme" />
+					</StackPanel>
+				</av:AutoHideFlyout>
+			</Button.Flyout>
+			<TextBlock>Salute</TextBlock>
+		</Button>
+        <Button>
+            <Button.Flyout>
+                <av:AutoHideFlyout>
+                    <av:SortControl />
+                </av:AutoHideFlyout>
+            </Button.Flyout>
+        </Button>
+	</StackPanel>
+</Window>

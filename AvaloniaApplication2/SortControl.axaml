@@ -1,0 +1,63 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:AvaloniaApplication2">
+	<Design.PreviewWith>
+		<controls:SortControl />
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type controls:SortControl}" TargetType="controls:SortControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel Spacing="8">
+            <StackPanel.Styles>
+                <Style Selector="HeaderedContentControl">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <DockPanel>
+                                    <ContentPresenter VerticalContentAlignment="Center" Content="{TemplateBinding Header}" />
+                                    <ContentPresenter Margin="10 0 0 0" Content="{TemplateBinding Content}" />
+                                </DockPanel>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+                <Style Selector="HeaderedContentControl StackPanel">
+                    <Setter Property="Orientation" Value="Horizontal" />
+                    <Setter Property="HorizontalAlignment" Value="Right" />
+                </Style>
+
+            </StackPanel.Styles>
+            <HeaderedContentControl Header="Status">
+                <StackPanel>
+                    <Button Command="{TemplateBinding StatusAscending}">🔼</Button>
+                    <Button Command="{TemplateBinding StatusDescending}">🔽</Button>
+                </StackPanel>
+            </HeaderedContentControl>
+            <HeaderedContentControl Header="Date">
+                <StackPanel>
+                    <Button Command="{TemplateBinding DateAscending}">🔼</Button>
+                    <Button Command="{TemplateBinding DateDescending}">🔽</Button>
+                </StackPanel>
+            </HeaderedContentControl>
+            <HeaderedContentControl Header="Amount">
+                <StackPanel>
+                    <Button Command="{TemplateBinding AmountAscending}">🔼</Button>
+                    <Button Command="{TemplateBinding AmountDescending}">🔽</Button>
+                </StackPanel>
+            </HeaderedContentControl>
+            <HeaderedContentControl Header="Label">
+                <StackPanel>
+                    <Button Command="{TemplateBinding LabelAscending}">🔼</Button>
+                    <Button Command="{TemplateBinding LabelDescending}">🔽</Button>
+                </StackPanel>
+            </HeaderedContentControl>
+        </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+	</ControlTheme>
+</ResourceDictionary>
