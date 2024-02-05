@@ -12,25 +12,31 @@
 		<av:MainViewModel />
     </Window.DataContext>
 
-    <StackPanel>
+    <Button>
+        <Button.Flyout>
+            <Flyout>
+                <StackPanel>
+                    <Button Command="{Binding MyCommand}" Content="Clickme">
+                        <Interaction.Behaviors>
+                            <av:HideFlyout />
+                        </Interaction.Behaviors>
+                    </Button>
+                    <Button ClickMode="Press" Command="{Binding MyCommand}" Content="Clickme" />
+                </StackPanel>
+            </Flyout>
+        </Button.Flyout>
+        <TextBlock>Salute</TextBlock>
+    </Button>
+
+    <!--<StackPanel>
 		<TextBox></TextBox>
-		<Button>
-			<Button.Flyout>
-				<av:AutoHideFlyout>
-					<StackPanel>
-						<Button ClickMode="Press" Command="{Binding MyCommand}" Content="Clickme" />
-                        <Button ClickMode="Press" Command="{Binding MyCommand}" Content="Clickme" />
-					</StackPanel>
-				</av:AutoHideFlyout>
-			</Button.Flyout>
-			<TextBlock>Salute</TextBlock>
-		</Button>
-        <Button>
+		
+        --><!--<Button>
             <Button.Flyout>
                 <av:AutoHideFlyout>
                     <av:SortControl />
                 </av:AutoHideFlyout>
             </Button.Flyout>
-        </Button>
-	</StackPanel>
+        </Button>--><!--
+	</StackPanel>-->
 </Window>

@@ -5,6 +5,8 @@
 		<controls:SortControl />
 	</Design.PreviewWith>
 
+
+
 	<ControlTheme x:Key="{x:Type controls:SortControl}" TargetType="controls:SortControl">
         <Setter Property="Template">
             <Setter.Value>

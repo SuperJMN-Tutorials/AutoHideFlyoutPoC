@@ -4,7 +4,7 @@ using System.Reactive.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.LogicalTree;
+using Avalonia.VisualTree;
 using ReactiveUI;
 
 namespace AvaloniaApplication2;
@@ -24,7 +24,7 @@ public class AutoHideFlyout : Flyout
 
     private static IObservable<Button> DescendantButtonClicked(Visual control)
     {
-        var buttons = control.GetLogicalDescendants().OfType<Button>();
+        var buttons = control.GetVisualDescendants().OfType<Button>();
         return buttons
             .Select(button => Observable.FromEventPattern<RoutedEventArgs>(h => button.Click += h, h => button.Click -= h)
                 .Select(pattern => pattern.Sender as Button).WhereNotNull()).Merge();
